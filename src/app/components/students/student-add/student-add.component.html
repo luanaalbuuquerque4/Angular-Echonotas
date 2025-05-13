@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <h2>Add New Student</h2>
+  
+  <div *ngIf="message" class="alert alert-{{messageType}} alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" (click)="message = ''"></button>
+  </div>
+  
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" 
+             [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+        <div *ngIf="f['name'].errors['required']">Name is required</div>
+        <div *ngIf="f['name'].errors['minlength']">Name must be at least 3 characters</div>
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email"
+             [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Please enter a valid email</div>
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="course" class="form-label">Course</label>
+      <input type="text" class="form-control" id="course" formControlName="course"
+             [ngClass]="{ 'is-invalid': submitted && f['course'].errors }">
+      <div *ngIf="submitted && f['course'].errors" class="invalid-feedback">
+        <div *ngIf="f['course'].errors['required']">Course is required</div>
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="year" class="form-label">Year</label>
+      <input type="number" class="form-control" id="year" formControlName="year"
+             [ngClass]="{ 'is-invalid': submitted && f['year'].errors }">
+      <div *ngIf="submitted && f['year'].errors" class="invalid-feedback">
+        <div *ngIf="f['year'].errors['required']">Year is required</div>
+        <div *ngIf="f['year'].errors['min'] || f['year'].errors['max']">Year must be between 1 and 5</div>
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="enrollmentDate" class="form-label">Enrollment Date</label>
+      <input type="date" class="form-control" id="enrollmentDate" formControlName="enrollmentDate"
+             [ngClass]="{ 'is-invalid': submitted && f['enrollmentDate'].errors }">
+      <div *ngIf="submitted && f['enrollmentDate'].errors" class="invalid-feedback">
+        <div *ngIf="f['enrollmentDate'].errors['required']">Enrollment Date is required</div>
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary me-2">Submit</button>
+      <a routerLink="/students" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+</div>

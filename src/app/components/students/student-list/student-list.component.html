@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h2>Student List</h2>
+  
+  <div *ngIf="message" class="alert alert-{{messageType}} alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" (click)="message = ''"></button>
+  </div>
+  
+  <div class="mb-3 d-flex justify-content-between align-items-center">
+    <a routerLink="/students/add" class="btn btn-primary">Add New Student</a>
+    
+    <!-- Show search results info if there's a search query -->
+    <div *ngIf="searchQuery" class="text-muted">
+      Found {{filteredStudents.length}} result(s) for "{{searchQuery}}"
+      <button class="btn btn-sm btn-outline-secondary ms-2" routerLink="/students">Clear</button>
+    </div>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Year</th>
+          <th>Enrollment Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of filteredStudents">
+          <td>{{student.id}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.course}}</td>
+          <td>{{student.year}}</td>
+          <td>{{student.enrollmentDate | date:'mediumDate'}}</td>
+          <td>
+            <a [routerLink]="['/students/edit', student.id]" class="btn btn-sm btn-warning me-2">Edit</a>
+            <button (click)="deleteStudent(student.id!)" class="btn btn-sm btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr *ngIf="filteredStudents.length === 0">
+          <td colspan="7" class="text-center">
+            {{searchQuery ? 'No matching students found' : 'No students found'}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Ann Tricha Mhay Montecalvo",
+      "email": "23-49467@g.batstate-u.edu.ph",
+      "course": "Bachelor of Science in Information Technology",
+      "year": 2,
+      "enrollmentDate": "2023-09-01"
+    },
+    {
+      "id": "2",
+      "name": "Allen James M. Martillan",
+      "email": "23-43108@g.batstate-u.edu.ph",
+      "course": "Bachelor of Science in Information Technology",
+      "year": 2,
+      "enrollmentDate": "2023-09-01"
+    },
+    {
+      "id": "3",
+      "name": "Ma. Kassandra Elaine Domaycos",
+      "email": "23-48944@g.batstate-u.edu.ph",
+      "course": "Bachelor of Science in Information Technology",
+      "year": 2,
+      "enrollmentDate": "2023-09-01"
+    },
+    {
+      "id": "4",
+      "name": "Jhon Mcneil Magtibay",
+      "email": "23-42069@g.batstate-u.edu.ph",
+      "course": "Bachelor of Science in Information Technology",
+      "year": 2,
+      "enrollmentDate": "2025-09-01"
+    }
+  ]
+}
