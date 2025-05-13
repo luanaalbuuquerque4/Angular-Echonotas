@@ -1,4 +1,14 @@
 # StudentManagement
+Home Page
+![image alt](https://github.com/altjimsss/ANGULAR-Student-Management-System/blob/main/Screenshot%202025-05-13%20132604.png)
+Student Page
+![image alt](https://github.com/altjimsss/ANGULAR-Student-Management-System/blob/main/Screenshot%202025-05-13%20132614.png)
+Add New Student
+![image alt](https://github.com/altjimsss/ANGULAR-Student-Management-System/blob/main/Screenshot%202025-05-13%20132623.png)
+Edit
+![image alt](https://github.com/altjimsss/ANGULAR-Student-Management-System/blob/main/Screenshot%202025-05-13%20132633.png)
+Search 
+![image alt](https://github.com/altjimsss/ANGULAR-Student-Management-System/blob/main/Screenshot%202025-05-13%20132645.png)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
