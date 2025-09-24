@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h2>Student List</h2>
+  <h2>Lista de Alunos</h2>
   
   <div *ngIf="message" class="alert alert-{{messageType}} alert-dismissible fade show" role="alert">
     {{message}}
@@ -7,12 +7,12 @@
   </div>
   
   <div class="mb-3 d-flex justify-content-between align-items-center">
-    <a routerLink="/students/add" class="btn btn-primary">Add New Student</a>
+    <a routerLink="/students/add" class="btn btn-primary">Add novo aluno</a>
     
     <!-- Show search results info if there's a search query -->
     <div *ngIf="searchQuery" class="text-muted">
       Found {{filteredStudents.length}} result(s) for "{{searchQuery}}"
-      <button class="btn btn-sm btn-outline-secondary ms-2" routerLink="/students">Clear</button>
+      <button class="btn btn-sm btn-outline-secondary ms-2" routerLink="/students">Limpar</button>
     </div>
   </div>
   
@@ -21,12 +21,12 @@
       <thead class="table-dark">
         <tr>
           <th>ID</th>
-          <th>Name</th>
+          <th>Nome </th>
           <th>Email</th>
-          <th>Course</th>
-          <th>Year</th>
-          <th>Enrollment Date</th>
-          <th>Actions</th>
+          <th>Curso</th>
+          <th>Ano</th>
+          <th>Data da matrícula</th>
+          <th>Informaçoes.</th>
         </tr>
       </thead>
       <tbody>
@@ -44,7 +44,7 @@
         </tr>
         <tr *ngIf="filteredStudents.length === 0">
           <td colspan="7" class="text-center">
-            {{searchQuery ? 'No matching students found' : 'No students found'}}
+            {{searchQuery ? 'No matching students found' : 'Nenhum aluno encontrado.'}}
           </td>
         </tr>
       </tbody>

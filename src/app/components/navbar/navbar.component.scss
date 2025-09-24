@@ -1,0 +1,78 @@
+// Estilização personalizada do navbar
+.navbar {
+  background-color: #6a1b9a !important; // roxo escuro
+
+  .navbar-brand {
+    color: #ffeb3b !important; // amarelo vibrante
+    font-weight: bold;
+    font-size: 1.3rem;
+
+    &:hover {
+      color: #fff176 !important; // amarelo mais claro no hover
+    }
+  }
+
+  .nav-link {
+    color: #ffffff !important; // branco padrão
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffeb3b !important; // amarelo no hover
+    }
+
+    &.active {
+      color: #ffeb3b !important; // destaque para o ativo
+      font-weight: 600;
+      border-bottom: 2px solid #ffeb3b;
+    }
+  }
+
+  // Botão toggle (menu mobile)
+  .navbar-toggler {
+    border-color: #ffffff;
+
+    .navbar-toggler-icon {
+      background-image: none; // remove o ícone padrão do bootstrap
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &::before,
+      &::after,
+      div {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: #ffffff;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  // Formulário de busca
+  form {
+    input.form-control {
+      border-radius: 20px;
+      border: none;
+      padding: 0.5rem 1rem;
+
+      &:focus {
+        box-shadow: 0 0 5px rgba(222, 202, 22, 0.7);
+      }
+    }
+
+    button.btn {
+      border-radius: 20px;
+      font-weight: 500;
+      border: 1px solid #fff;
+
+      &:hover {
+        background-color: #ffeb3b;
+        color: #6a1b9a;
+        border-color: #000000;
+      }
+    }
+  }
+}
